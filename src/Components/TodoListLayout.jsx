@@ -1,15 +1,21 @@
-// import { Col, Container, Row } from "react-bootstrap";
+// Bootstrap Imports
+import { Col, Container, Row } from "react-bootstrap";
 
-// const TodoListLayout = () => {
-//     return ( 
-//         <Container className="p-3">
-//             <Row className="">
-//                 <Col>
-//                     <h2>Todo</h2>
-//                 </Col>
-//             </Row>
-//         </Container>
-//     );
-// }
+// React Router Dom
+import { Form } from "react-router-dom";
+
+const TodoListLayout = () => {
+    return ( 
+        <Container className="">
+            <Row>
+                <Col>
+                    <Form method="post" action="/">
+                        <input type="text" name="" id="" />
+                    </Form>
+                </Col>
+            </Row>
+        </Container>
+    );
+}
  
-// export default TodoListLayout;
+export default TodoListLayout;

@@ -11,7 +11,7 @@ import SunIcon from "@heroicons/react/24/solid/SunIcon"
 import darkBackgroundImage  from "../images/bg-desktop-dark.jpg";
 
 // Components
-import TodoListLayout from "./TodoListLayout";
+import TodoListInputForm from "./TodoListInputForm";
 
 const Layout = () => {
     return ( 
@@ -27,7 +27,7 @@ const Layout = () => {
                     <SunIcon width={35} height={35} className="sunIcon"/>
                 </Col>
                 <Col xs={12} sm={12} md={12} lg={12}>
-                    <TodoListLayout/>
+                    <TodoListInputForm/>
                 </Col>
             </Row>
         </Container>

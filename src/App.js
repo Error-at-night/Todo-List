@@ -10,16 +10,15 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 // Components
 import Layout from './Components/Layout';
+import { TodoListInputFormAction } from './Components/TodoListInputForm';
 
 // Router
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout/>,
+    action: TodoListInputFormAction,
     children:[
-      {
-
-      }
     ]
   }
 ])

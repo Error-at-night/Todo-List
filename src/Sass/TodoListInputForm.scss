@@ -1,0 +1,33 @@
+@import "Variables";
+
+.todoListInputListContainer {
+    margin: 0;
+    padding: 0;
+}
+
+.todoListInputListContainer form {
+    width: 100%;
+    background-color: $VeryDarkBlue;
+    border-radius: 10px;
+    padding: 18px 25px;
+}
+
+.todoListInputListContainer p {
+    border-radius: 50%;
+    background-color: $VeryDarkBlue;
+    border: 2px solid $VeryDarkGrayishBlue2;
+    height: 25px;
+    width: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.todoListInputListContainer input[type="text"] {
+    width: 100%;
+    padding: 0 25px;
+    background-color: $VeryDarkBlue;
+    color: $VeryLightGray;
+    outline: none;
+    border-radius: 8px;
+    border: 0;
+}

@@ -12,8 +12,10 @@ import darkBackgroundImage  from "../images/bg-desktop-dark.jpg";
 
 // Components
 import TodoListInputForm from "./TodoListInputForm";
+import TodoListData from "./TodoListData";
 
 const Layout = () => {
+
     return ( 
         <Container fluid className="layoutContainer m-0 p-0">
             <Row>
@@ -29,6 +31,9 @@ const Layout = () => {
                 <Col xs={12} sm={12} md={12} lg={12}>
                     <TodoListInputForm/>
                 </Col>
+            </Row>
+            <Row className="rowThree">
+                <TodoListData/>
             </Row>
         </Container>
     );

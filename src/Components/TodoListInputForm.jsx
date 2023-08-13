@@ -17,7 +17,7 @@ const TodoListInputForm = () => {
                 <Col xs={12} sm={12} >
                     <Form method="post" action="/" className="d-flex align-items-center">
                         <p></p>
-                        <input type="text" name="todo" id="" placeholder="Create a new todo..."/>
+                        <input type="text" name="todo" id="" autoComplete="off" placeholder="Create a new todo..."/>
                     </Form>
                 </Col>
             </Row>
@@ -27,18 +27,22 @@ const TodoListInputForm = () => {
 
 export default TodoListInputForm;
 
-// Action function
+// TodoListInputFormAction function
 export const TodoListInputFormAction = async ({ request }) => {
     // get user input
     const data = await request.formData();
 
+    // Get current time
+    // const currentTime = new Date().toString();
+
     const dataSubmission = {
-        todo: data.get("todo")
+        todo: data.get("todo"),
+        // time: currentTime
     }
 
     // frontend check (validation) 
     if(dataSubmission.todo.length < 5) {
-        return toast.error("Todo must be more than")
+        return toast.error("Text must exceed five characters.")
     } else {
         toast.success(`${dataSubmission.todo} added successfully`)
     }
@@ -53,5 +57,5 @@ export const TodoListInputFormAction = async ({ request }) => {
     })
 
     // redirect user
-    return redirect("/")
+    return redirect("/");
 }

@@ -13,6 +13,7 @@
     object-fit: cover;
 }
 
+// second row
 .layoutContainer .rowTwo {
     position: absolute;
     max-width: 100%;
@@ -31,6 +32,18 @@
 
 .layoutContainer .rowTwo .sunIcon {
     color: $White;
+}
+
+// third row
+.layoutContainer .rowThree {
+    position: absolute;
+    margin-top: 100px;
+    max-width: 100%;
+    width: 650px;
+    margin: 0 auto;
+    top: 39%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 

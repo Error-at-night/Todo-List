@@ -2,7 +2,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 
 // React Router Dom
-import { Form, redirect } from "react-router-dom";
+import { redirect, useFetcher } from "react-router-dom";
 
 // Sass
 import "../Sass/TodoListInputForm.scss";
@@ -10,15 +10,30 @@ import "../Sass/TodoListInputForm.scss";
 // Toastify message
 import { toast } from "react-toastify";
 
+// React imports
+import { useEffect, useRef } from "react";
+
 const TodoListInputForm = () => {
+    const fetcher = useFetcher();
+    const onSubmit = fetcher.state === "submitting";
+
+    const ref = useRef();
+
+    useEffect(() => {
+        if(!onSubmit) {
+            ref.current.reset();
+        }
+    }, [onSubmit])
+
     return ( 
         <Container fluid className="todoListInputListContainer mt-3 align-items-center">
             <Row>
-                <Col xs={12} sm={12} >
-                    <Form method="post" action="/" className="d-flex align-items-center">
+                <Col xs={12} sm={12}>
+                    <fetcher.Form method="post" action="/" className="d-flex align-items-center" ref={ref}
+                    >
                         <p></p>
                         <input type="text" name="todo" id="" autoComplete="off" placeholder="Create a new todo..."/>
-                    </Form>
+                    </fetcher.Form>
                 </Col>
             </Row>
         </Container>

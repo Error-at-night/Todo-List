@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap');
+
+// variables
+@import "Variables";
+
+.todoListContainer {
+    background-color: $VeryDarkDesaturatedBlue;
+    border-bottom: 1px solid $DarkGrayishBlue;
+}
+
+.todoListContainer:first-child {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.todoListContainer:last-child {
+    border-bottom: none;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.todoListContainer label {
+    color: $VeryLightGray;
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    padding-left: 26px;
+}
+
+.todoListContainer:hover, label:hover {
+    cursor: pointer;
+}
+
+.todoListContainer input[type="checkbox"]{
+    opacity: 0;
+    width: 0;
+    margin: 0;
+}
+
+.todoListContainer span {
+    display: none;
+}
+
+.todoListContainer:hover span {
+    display: inline;
+    color: $DarkGrayishBlue;
+    font-size: 20px;
+}
+
+.bottomButtons {
+    background-color: $VeryDarkDesaturatedBlue;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+}
+
+.bottomButtons p{
+    color: $DarkGrayishBlue;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+}

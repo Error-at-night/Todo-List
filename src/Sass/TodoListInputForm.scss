@@ -7,14 +7,14 @@
 
 .todoListInputListContainer form {
     width: 100%;
-    background-color: $VeryDarkBlue;
+    background-color: $VeryDarkDesaturatedBlue;
     border-radius: 10px;
     padding: 18px 25px;
 }
 
 .todoListInputListContainer p {
     border-radius: 50%;
-    background-color: $VeryDarkBlue;
+    background-color: $VeryDarkDesaturatedBlue;
     border: 2px solid $VeryDarkGrayishBlue2;
     height: 25px;
     width: 25px;
@@ -25,9 +25,15 @@
 .todoListInputListContainer input[type="text"] {
     width: 100%;
     padding: 0 25px;
-    background-color: $VeryDarkBlue;
+    background-color: $VeryDarkDesaturatedBlue;
     color: $VeryLightGray;
     outline: none;
     border-radius: 8px;
     border: 0;
+}
+
+::placeholder {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 500;
+    font-size: 19px;
 }

@@ -23,7 +23,7 @@ const Layout = () => {
                     <img src={darkBackgroundImage} alt="background-img" className="img-fluid backgroundImage"/>
                 </Col>
             </Row>
-            <div className="div-container">
+            <div className="div-container px-3">
                 <Row>
                     <Col xs={12} sm={12} md={12} lg={12} className="mb-2 d-flex align-items-center justify-content-between">
                         <h1>TODO</h1>

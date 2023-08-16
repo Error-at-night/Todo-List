@@ -19,22 +19,24 @@ const Layout = () => {
     return ( 
         <Container fluid className="layoutContainer m-0 p-0">
             <Row>
-                <Col xs={12} sm={12} md={12} lg={12} >
+                <Col xs={12} sm={12} md={12} lg={12}>
                     <img src={darkBackgroundImage} alt="background-img" className="img-fluid backgroundImage"/>
                 </Col>
             </Row>
-            <Row className="rowTwo">
-                <Col xs={12} sm={12} md={12} lg={12} className="d-flex align-items-center justify-content-between">
-                    <h1>TODO</h1>
-                    <SunIcon width={35} height={35} className="sunIcon"/>
-                </Col>
-                <Col xs={12} sm={12} md={12} lg={12}>
-                    <TodoListInputForm/>
-                </Col>
-            </Row>
-            <Row className="rowThree">
-                <TodoListData/>
-            </Row>
+            <div className="div-container">
+                <Row>
+                    <Col xs={12} sm={12} md={12} lg={12} className="mb-2 d-flex align-items-center justify-content-between">
+                        <h1>TODO</h1>
+                        <SunIcon width={35} height={35} className="sunIcon"/>
+                    </Col>
+                    <Col xs={12} sm={12} md={12} lg={12} className="mb-3">
+                        <TodoListInputForm/>
+                    </Col>
+                    <Col>
+                        <TodoListData/>
+                    </Col>
+                </Row>
+            </div>
         </Container>
     );
 }

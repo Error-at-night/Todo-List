@@ -3,47 +3,28 @@
 .layoutContainer {
     min-height: 100vh;
     background-color: $VeryDarkBlue;
-    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .layoutContainer .backgroundImage {
     max-width: 100%;
     height: 44vh;
-    object-position: center;
     object-fit: cover;
 }
 
-// second row
-.layoutContainer .rowTwo {
-    position: absolute;
-    max-width: 100%;
+.layoutContainer .div-container {
     width: 650px;
-    margin: 0 auto;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    max-width: 100%;
+    margin: -220px auto;
 }
 
-.layoutContainer .rowTwo h1 {
+.layoutContainer .div-container h1 {
     color: $White;
     letter-spacing: 1.2rem;
     font-size: 2.5rem;
 }
 
-.layoutContainer .rowTwo .sunIcon {
-    color: $White;
+.layoutContainer .div-container .sunIcon {
+    color: $White;;
 }
-
-// third row
-.layoutContainer .rowThree {
-    position: absolute;
-    margin-top: 100px;
-    max-width: 100%;
-    width: 650px;
-    margin: 0 auto;
-    top: 39%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-

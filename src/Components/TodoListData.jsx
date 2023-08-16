@@ -13,7 +13,7 @@ const TodoListData = () => {
             <Row>
                 <Col xs={12} sm={12} md={12} lg={12}>
                     {data && data.map(todoList => (
-                        <h1 key={todoList.id} style={{color: "white"}}>{todoList.todo}</h1>
+                        <p key={todoList.id} style={{color: "white"}}>{todoList.todo}</p>
                     ))}
                 </Col>
             </Row>

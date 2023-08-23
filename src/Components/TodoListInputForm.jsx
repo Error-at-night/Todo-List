@@ -11,7 +11,10 @@ import "../Sass/TodoListInputForm.scss";
 import { toast } from "react-toastify";
 
 // React imports
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
+
+// ThemeContext
+import { ThemeContext } from "./Layout";
 
 const TodoListInputForm = () => {
     const fetcher = useFetcher();
@@ -25,8 +28,12 @@ const TodoListInputForm = () => {
         }
     }, [onSubmit])
 
+    // theme
+    const { theme  } = useContext(ThemeContext)
+    const className = "todoListInputListContainer-" + theme
+
     return ( 
-        <Container fluid className="todoListInputListContainer mt-3 align-items-center">
+        <Container fluid className={`${className} mt-3 align-items-center`}>
             <Row>
                 <Col xs={12} sm={12}>
                     <fetcher.Form method="post" action="/" className="d-flex align-items-center" ref={ref}
@@ -47,12 +54,8 @@ export const TodoListInputFormAction = async ({ request }) => {
     // get user input
     const data = await request.formData();
 
-    // Get current time
-    // const currentTime = new Date().toString();
-
     const dataSubmission = {
         todo: data.get("todo"),
-        // time: currentTime
     }
 
     // frontend check (validation) 

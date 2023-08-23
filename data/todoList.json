@@ -1,28 +1,12 @@
 {
   "todoList": [
     {
-      "todo": "Complete ReactJs official docs",
+      "todo": "Pray to God",
       "id": 1
     },
     {
-      "todo": "Complete this project",
+      "todo": "Work hard",
       "id": 2
-    },
-    {
-      "todo": "Learn NextJs, TypeScript and Framer-Motion",
-      "id": 3
-    },
-    {
-      "todo": "Learn Backend development (MERN STACK)",
-      "id": 4
-    },
-    {
-      "todo": "Thank you Jesus",
-      "id": 5
-    },
-    {
-      "todo": "Amennnnn",
-      "id": 6
     }
   ]
 }

@@ -3,51 +3,173 @@
 // variables
 @import "Variables";
 
-.todoListContainer {
+:root {
+    --gradient-colors: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.container-light {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.todoListContainer-dark {
     background-color: $VeryDarkDesaturatedBlue;
     border-bottom: 1px solid $DarkGrayishBlue;
 }
 
-.todoListContainer:first-child {
+.todoListContainer-light {
+    background-color: $White;
+    border-bottom: 1px solid $LightGrayishBlue;
+}
+
+.todoListContainer-dark:first-child {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
 
-.todoListContainer:last-child {
-    border-bottom: none;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+.todoListContainer-light:first-child {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
-.todoListContainer label {
+.todoListContainer-dark label {
     color: $VeryLightGray;
     font-size: 20px;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
-    padding-left: 26px;
+    padding-left: 45px;
+    position: relative;
 }
 
-.todoListContainer:hover, label:hover {
+.todoListContainer-dark label::after {
+    content: "";
+    border: 2px solid $VeryDarkGrayishBlue2;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    border-radius: 50%;
+}
+
+.todoListContainer-dark label::before {
+    content: "";
+    background: url("../images/icon-check.svg") no-repeat;
+    z-index: 1;
+    background-position: center;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 0px;
+    top: 5px;
+    transform: scale(0) rotateZ(180deg);
+    transition: all 0.4s cubic-bezier(0.54, 0.01, 0, 1.49);
+}
+
+.todoListContainer-light label {
+    color: $VeryDarkGrayishBlue;
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    padding-left: 45px;
+    position: relative;
+}
+
+.todoListContainer-light label::after {
+    content: "";
+    border: 2px solid $VeryLightGrayishBlue;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    border-radius: 50%;
+}
+
+.todoListContainer-light label::before {
+    content: "";
+    background: url("../images/icon-check.svg") no-repeat;
+    z-index: 1;
+    background-position: center;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 0px;
+    top: 5px;
+    transform: scale(0) rotateZ(180deg);
+    transition: all 0.4s cubic-bezier(0.54, 0.01, 0, 1.49);
+}
+
+.todoListContainer-dark input:hover, .todoListContainer-dark label:hover {
     cursor: pointer;
 }
 
-.todoListContainer input[type="checkbox"]{
+.todoListContainer-light input:hover, .todoListContainer-light label:hover {
+    cursor: pointer;
+}
+
+.checked-dark label {
+    text-decoration: line-through;
+    color: $VeryDarkGrayishBlue1;
+}
+
+.checked-dark label::before {
+    transform: scale(1) rotateZ(0);
+    background-image: var(--gradient-colors);
+    border-radius: 50%;
+    border: 2px solid var(--gradient-colors);
+    position: absolute;
+}
+
+.checked-light label {
+    text-decoration: line-through;
+}
+
+.checked-light label::before {
+    transform: scale(1) rotateZ(0);
+    background-image: var(--gradient-colors);
+    border-radius: 50%;
+    border: 2px solid var(--gradient-colors);
+}
+
+.todoListContainer-dark input[type="checkbox"]{
     opacity: 0;
     width: 0;
     margin: 0;
 }
 
-.todoListContainer span {
+.todoListContainer-light input[type="checkbox"]{
+    opacity: 0;
+    width: 0;
+    margin: 0;
+}
+
+
+.todoListContainer-dark span {
     display: none;
 }
 
-.todoListContainer:hover span {
+.todoListContainer-light span {
+    display: none;
+}
+
+.todoListContainer-dark:hover span {
     display: inline;
+    cursor: pointer;
     color: $DarkGrayishBlue;
     font-size: 20px;
 }
 
-.bottomButtons {
+.todoListContainer-light:hover span {
+    display: inline;
+    cursor: pointer;
+    color: $VeryDarkGrayishBlue;
+    font-size: 20px;
+}
+
+.bottomButtons-dark {
     background-color: $VeryDarkDesaturatedBlue;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -55,8 +177,42 @@
     font-weight: 400;
 }
 
-.bottomButtons p{
+.bottomButtons-light {
+    background-color: $White;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+}
+
+.bottomButtons-dark p{
     color: $DarkGrayishBlue;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
+}
+
+.bottomButtons-light p{
+    color: $VeryDarkGrayishBlue;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+}
+
+.bottomButtons-dark a{
+    color: $DarkGrayishBlue;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    &:hover {
+        color: $LightGrayishBlue;
+    }
+}
+
+.bottomButtons-light a{
+    color: $VeryDarkGrayishBlue;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    &:hover {
+        color: $VeryDarkBlue;
+    }
 }

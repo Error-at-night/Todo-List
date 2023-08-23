@@ -18,8 +18,8 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout/>,
+    action: TodoListInputFormAction,
     loader: TodoListDataLoader,
-    action: TodoListInputFormAction
   }
 ])
 

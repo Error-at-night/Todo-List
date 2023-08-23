@@ -1,18 +1,30 @@
 @import "Variables";
 
-.todoListInputListContainer {
+.todoListInputListContainer-dark {
     margin: 0;
     padding: 0;
 }
 
-.todoListInputListContainer form {
+.todoListInputListContainer-light {
+    margin: 0;
+    padding: 0;
+}
+
+.todoListInputListContainer-dark form {
     width: 100%;
     background-color: $VeryDarkDesaturatedBlue;
     border-radius: 10px;
     padding: 18px 25px;
 }
 
-.todoListInputListContainer p {
+.todoListInputListContainer-light form {
+    width: 100%;
+    background-color: $White;
+    border-radius: 10px;
+    padding: 18px 25px;
+}
+
+.todoListInputListContainer-dark p {
     border-radius: 50%;
     background-color: $VeryDarkDesaturatedBlue;
     border: 2px solid $VeryDarkGrayishBlue2;
@@ -22,11 +34,31 @@
     padding: 0;
 }
 
-.todoListInputListContainer input[type="text"] {
+.todoListInputListContainer-light p {
+    border-radius: 50%;
+    background-color: $White;
+    border: 2px solid $VeryLightGrayishBlue;
+    height: 25px;
+    width: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.todoListInputListContainer-dark input[type="text"] {
     width: 100%;
     padding: 0 25px;
     background-color: $VeryDarkDesaturatedBlue;
     color: $VeryLightGray;
+    outline: none;
+    border-radius: 8px;
+    border: 0;
+}
+
+.todoListInputListContainer-light input[type="text"] {
+    width: 100%;
+    padding: 0 25px;
+    background-color: $White;
+    color: $VeryDarkDesaturatedBlue;
     outline: none;
     border-radius: 8px;
     border: 0;

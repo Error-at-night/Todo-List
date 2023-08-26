@@ -108,7 +108,8 @@ const TodoListData = () => {
     const checked = "checked-" + theme
     const buttomButtons = "bottomButtons-" + theme
     const container = "container-" + theme
-    // const dragAndDrop = "dragAndDrop-" + theme
+    const dragAndDrop = "dragAndDrop-" + theme
+    const mobileButtons = "mobileButtons-" + theme
 
     // function to handle drag and drop
     const handleDragEnd = (result) => {
@@ -164,7 +165,9 @@ const TodoListData = () => {
                             )}
                         </Droppable>
                         {todoData && todoData.length > 0 &&
-                            <div className={`${buttomButtons} pt-3 pb-1 px-4 d-flex bottomButtons justify-content-between`}>
+                            <div className={`${buttomButtons} pt-3 pb-1 px-4 d-none d-sm-flex bottomButtons 
+                                justify-content-between`}
+                            >
                                 <div>
                                     <p>{`${uncheckedItemCount} item left`}</p>
                                 </div>
@@ -178,9 +181,31 @@ const TodoListData = () => {
                                 </div>
                             </div>
                         }
+                        {todoData && todoData.length > 0 && 
+                            <div className={`${buttomButtons} pt-3 pb-1 px-4 d-flex d-sm-none bottomButtons 
+                                justify-content-between`}
+                            >
+                                <div>
+                                    <p>{`${uncheckedItemCount} item left`}</p>
+                                </div>
+                                <div>
+                                    <NavLink onClick={handleClearCompleted}>Clear Completed</NavLink>
+                                </div>
+                            </div>
+                        }
                     </Col>
                 </Row>
             </Container>
+            {todoData && todoData.length > 0 &&
+                <div className={`${mobileButtons} my-3 py-3 d-flex d-sm-none justify-content-center`}>
+                    <NavLink className="pe-3" onClick={() => setFilterTodo("all")}>All</NavLink>
+                    <NavLink className="px-3" onClick={() => setFilterTodo("active")}>Active</NavLink>
+                    <NavLink className="ps-3" onClick={() => setFilterTodo("completed")}>Completed</NavLink>
+                </div>
+            }
+            {todoData && todoData.length > 1 && 
+                <p className={`${dragAndDrop} text-center`}>Drag and drop to reorder list</p>
+            }
         </DragDropContext>
     );
 }

@@ -1,12 +1,3 @@
 {
-  "todoList": [
-    {
-      "todo": "Pray to God",
-      "id": 1
-    },
-    {
-      "todo": "Work hard",
-      "id": 2
-    }
-  ]
+  "todoList": []
 }

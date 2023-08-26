@@ -216,3 +216,42 @@
         color: $VeryDarkBlue;
     }
 }
+
+.dragAndDrop-dark {
+    color: $VeryDarkGrayishBlue2;
+}
+
+.dragAndDrop-light {
+    color: $VeryDarkGrayishBlue;
+}
+
+.mobileButtons-dark {
+    background-color:  $VeryDarkDesaturatedBlue;
+    border-radius: 10px;
+}
+
+.mobileButtons-light {
+    background-color: $White;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.mobileButtons-dark a {
+    color: $DarkGrayishBlue;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    &:hover {
+        color: $LightGrayishBlue;
+    }
+}
+
+.mobileButtons-light a {
+    color: $VeryDarkGrayishBlue;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    &:hover {
+        color: $VeryDarkBlue;
+    }
+}

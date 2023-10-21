@@ -51,29 +51,51 @@ export default TodoListInputForm;
 
 // TodoListInputFormAction function
 export const TodoListInputFormAction = async ({ request }) => {
-    // get user input
+    // Get user input
     const data = await request.formData();
+    const todo = data.get("todo");
+
+    // Frontend validation
+    if (todo.length < 10) {
+        return toast.error("Text must exceed 10 characters.");
+    }
 
     const dataSubmission = {
-        todo: data.get("todo"),
+        todo
+    };
+
+    try {
+        // Post request to add the new todo
+        const response = await fetch("http://localhost:4000/todoList", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(dataSubmission),
+        });
+
+        if (!response.ok) {
+            throw new Error("Failed to add the todo");
+        }
+
+        // After successfully adding the todo, fetch the updated data
+        const updatedDataResponse = await fetch("http://localhost:4000/todoList");
+
+        if (!updatedDataResponse.ok) {
+            throw new Error("Failed to fetch updated data");
+        }
+
+        const updatedData = await updatedDataResponse.json();
+
+        console.log(updatedData)
+
+        // Display a success message
+        toast.success(`${todo} added successfully`);
+
+        // Redirect user
+        return redirect("/");
+
+    } catch (error) {
+        toast.error(error.message);
     }
-
-    // frontend check (validation) 
-    if(dataSubmission.todo.length < 5) {
-        return toast.error("Text must exceed five characters.")
-    } else {
-        toast.success(`${dataSubmission.todo} added successfully`)
-    }
-
-    // post request to the API
-    fetch("http://localhost:4000/todoList", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body : JSON.stringify(dataSubmission)
-    }).then(() => {
-        console.log("todo-list added")
-    })
-
-    // redirect user
-    return redirect("/");
 }

@@ -1,7 +1,9 @@
 // variables
 @import "Variables";
 
-p {
+button {
     color: $White;
     cursor: pointer;
+    background: none;
+    border: none;
 }

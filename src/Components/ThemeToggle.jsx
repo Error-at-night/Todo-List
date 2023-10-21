@@ -20,11 +20,11 @@ const ThemeToggle = () => {
     };
 
     return ( 
-        <p className="toggle-button" onClick={() => {
+        <button className="toggle-button" onClick={() => {
             toggleTheme();
         }}>
             {theme === "dark" ? <MoonIcon width={30} height={30}/> : <SunIcon width={30} height={30}/>}
-        </p>
+        </button>
     );
 
 }
